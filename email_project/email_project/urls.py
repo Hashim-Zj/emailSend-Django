@@ -21,6 +21,6 @@ from email_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mail', views.SendEmailView.as_view()),
-    path('mail/send', views.MailSendView.as_view()),
+    path('', views.MailSendView.as_view()),
     
 ]
