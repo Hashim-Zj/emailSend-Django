@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email send</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin-top: 3rem;
+        background-color: rgb(61, 60, 60);
+        color: rgb(211, 211, 211);
+      }
+
+      form {
+        margin: auto;
+        width: 50%;
+      }
+
+      p {
+        margin: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      label {
+        margin-left: 1rem;
+      }
+
+      input,
+      textarea {
+        border: 2px solid rgb(129, 129, 131);
+        background-color: rgba(79, 79, 79, 0.805);
+        color: rgb(255, 255, 255);
+        padding: 0.3rem;
+        width: 15rem;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: aliceblue;
+      }
+
+      .btn-send {
+        width: 5rem;
+        height: 2.5rem;
+        display: block;
+        margin: 1.2rem auto;
+        border: 2px solid whitesmoke;
+        background-color: rgb(41, 40, 40);
+        color: rgb(226, 222, 222);
+        font-size: 15px;
+        font-weight: 800;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <form action="" method="post">
+        <fieldset>
+          <legend>
+            <h2>Email Send!</h2>
+          </legend>
+          {% csrf_token %}
+          <p>
+            <label for="subject">Subject :</label>
+            <input type="text" id="subject" placeholder="Enter subject" name="sub">
+          </p>
+          <p>
+            <label for="message">Message :</label>
+            <textarea type="text" id="message" placeholder="Enter........... message..." name="msg" rows="4"></textarea>
+          </p>
+          <p>
+            <label for="toaddres">To :</label>
+            <input type="text" id="toaddres" placeholder="Enter To address" name="to">
+          </p>
+          <button class="btn-send" type="submit">Send</button>
+        </fieldset>
+      </form>
+    </main>
+
+  </body>
+
+</html>
